@@ -1,0 +1,50 @@
+import random
+import time
+name1=input("enter the player1 name: ")
+name2=input("enter the playher name:")
+nums=[]
+while(len(nums)<5):
+     d=random.randint(1,10)
+     if (d in nums):
+         continue
+     else:
+         nums.append(d)
+print("--------------------------------------")
+print("---------- Computer has choosen five Numbers------------ ")
+print("--------Ready To Play!--------")
+print("--------------------------------------")
+player1=[]
+player2=[]
+s1=0
+s2=0
+for i in range(3):
+    Print("-----Turn{}------".format (i+1))
+    a=int(input("Player1 -> Enter The Number: "))
+    player1.append(a)
+    if a in nums:
+        print("-----CORRECT-----")
+        s1=s1+1
+    else:
+        print("-----WRONG-----")
+    b=int(input("Player2 -> Enter The Number: "))
+    player2.append(b)
+    if b in nums:
+        print("-----CORRECT-----")
+        s2=s2+1
+    else:
+        print("-----WRONG-----")
+time.sleep(2)
+print("----SUMMARY----")
+print("The Computer Has choosen ",nums)
+print("PLAYER1 Has choosen ",a)
+print("PLAYER1 Has Scored ",s1)
+print("-------------------------")
+print("PLAYER2 Has choosen ",b)
+print("PLAYER2 Has Scored ",s2)
+
+if(s1>s2):
+    print("-----PLAYER 1 WON!--------")
+elif(s2>s1):
+    print("-----PLAYER 2 WON!--------")
+else:
+    print("-----DRAW!--------")
