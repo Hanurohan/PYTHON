@@ -1,0 +1,18 @@
+name=['A','B','C','D','E','F','G','H','I','J']
+memo=[0,1,1,1,2,2,1,2,1,2]
+salary=[1000,2000,3000,4500,2000,5000,1500,2300,1300,1100]
+
+data=list(zip(name,memo,salary))
+to_removed=[i for i in data if i[2]>4000]
+havinging=[i for i in data if i[2]<=4000]
+remaining=[i for i in havinging]
+remaining.sort(key=lambda x:x[2],reverse=True)
+seen_memos = set()
+filtered_remaining = []
+for entry in remaining:
+    if entry[1] not in seen_memos:
+        filtered_remaining.append(entry)
+        seen_memos.add(entry[1])
+        
+print("Filtered Remaining List:")
+print(filtered_remaining)
