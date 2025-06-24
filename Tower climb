@@ -1,0 +1,12 @@
+x=5 #height of climbing
+y=3 #slipping down
+h=21 #height of tower
+at=0
+mi=0
+while(at!=h):
+    mi=mi+1
+    if(mi%2==0):
+        at=at-y
+    else:
+        at=at+x
+print(mi)
