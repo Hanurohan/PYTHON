@@ -1,0 +1,47 @@
+def circle():
+    print(3.14*r**2)
+    
+def square(a):
+    print(a**2)
+    
+def rectangle():
+    l=int(input("Enter the length: "))
+    b=int(input("Enter the Breadth: "))
+    return l*b
+    
+def triangle(b,h):
+    return 0.5*b*h
+    
+while(True):
+    print("1.CIRCLE..")
+    print("2.SQUARE..")
+    print("3.RECTANGLE..")
+    print("4.TRIANGLE..")
+    ch=int(input("Enter Your choice: "))
+    match ch:
+        case 1:
+            r=int(input("Enter the Radius of the Circle: "))
+            circle()
+            print("-------------------------------------------------")
+        case 2:
+            a=int(input("Enter the Area of the Square: "))
+            square(a)
+            print("-------------------------------------------------")
+        case 3:
+            l=int(input("Enter the length: "))
+            b=int(input("Enter the Breadth: "))
+            res=rectangle()
+            print(res)
+            print("-------------------------------------------------")
+        case 4:
+            b=int(input("Enter the Base: "))
+            h=int(input("Enter the Height: "))
+            res2=triangle(b,h)
+            print(res2)
+            print("-------------------------------------------------")
+        case _:
+            print("Please Enter Valid Choice")
+            print("-------------------------------------------------")
+            
+
+            
