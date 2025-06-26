@@ -1,0 +1,48 @@
+import random
+
+# Define the snakes and ladders
+snakes = {16: 6, 47: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78}
+ladders = {1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100}
+
+# Initialize player positions
+player_pos = [0, 0]
+
+# Function to roll the dice
+def roll_dice():
+    return random.randint(1, 6)
+
+# Function to move player
+def move(player, pos):
+    dice = roll_dice()
+    print(f"Player {player+1} rolled a {dice}")
+    pos += dice
+
+    if pos > 100:
+        pos -= dice  # Stay in the same place if move exceeds 100
+        print("Roll exceeded 100. Try again next turn.")
+    elif pos in snakes:
+        print(f"Oh no! Snake bite! Go down from {pos} to {snakes[pos]}")
+        pos = snakes[pos]
+    elif pos in ladders:
+        print(f"Yay! Ladder up from {pos} to {ladders[pos]}")
+        pos = ladders[pos]
+    else:
+        print(f"Player {player+1} moved to {pos}")
+
+    return pos
+
+# Main game loop
+def play_game():
+    turn = 0
+    while True:
+        input(f"\nPlayer {turn+1}'s turn. Press Enter to roll the dice.")
+        player_pos[turn] = move(turn, player_pos[turn])
+        
+        if player_pos[turn] == 100:
+            print(f"\n🎉 Player {turn+1} wins! 🎉")
+            break
+        
+        # Switch player
+        turn = 1 - turn
+
+play_game()
