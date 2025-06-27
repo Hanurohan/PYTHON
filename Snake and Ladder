@@ -34,7 +34,7 @@ def play_game():
         player_pos[turn] = move(turn, player_pos[turn])
         
         if player_pos[turn] == 100:
-            print(f"\n🎉 Player {turn+1} wins! 🎉")
+            print(f"\n Player {turn+1} wins! ")
             break
         
         # Switch player
