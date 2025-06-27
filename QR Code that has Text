@@ -1,0 +1,13 @@
+import qrcode
+
+def read_text_from_file(file_path):
+    with open(file_path,'r') as file:
+        text=file.read()
+        return text
+file_path='Day7.txt'
+msg=read_text_from_file(file_path)
+r=qrcode.QRCode()
+r.add_data(msg)
+r.make(fit=True)
+a=r.make_image(fill_color="black",back_color="white")
+a.save('tetx.png')
