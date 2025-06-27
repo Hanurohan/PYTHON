@@ -1,0 +1,12 @@
+from tabulate import tabulate
+headers=['Name','Age','Department']
+data=[
+    ['Ravi',25,"HR"],
+    ["Anjali",38,'Finance'],
+    ['Arun',32,'Logistics'],
+]
+table=tabulate(data,headers=headers,tablefmt='grid')
+print(table)
+with open('emp.txt','w') as file:
+    file.write(table)
+    print('Table Printed Sucessfully')
