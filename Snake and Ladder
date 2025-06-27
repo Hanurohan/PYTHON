@@ -1,17 +1,13 @@
 import random
 
-# Define the snakes and ladders
 snakes = {16: 6, 47: 26, 49: 11, 56: 53, 62: 19, 64: 60, 87: 24, 93: 73, 95: 75, 98: 78}
 ladders = {1: 38, 4: 14, 9: 31, 21: 42, 28: 84, 36: 44, 51: 67, 71: 91, 80: 100}
 
-# Initialize player positions
 player_pos = [0, 0]
 
-# Function to roll the dice
 def roll_dice():
     return random.randint(1, 6)
 
-# Function to move player
 def move(player, pos):
     dice = roll_dice()
     print(f"Player {player+1} rolled a {dice}")
@@ -31,7 +27,6 @@ def move(player, pos):
 
     return pos
 
-# Main game loop
 def play_game():
     turn = 0
     while True:
