@@ -1,0 +1,14 @@
+from twilio.rest import Client
+account_sid='AC097fab1f037b15700e7a0cadaa278f4f'
+auth_token='67a70f974c4b8257f618b9d1d3d74d1c'
+twilio_number='+19383003483'
+target_number=['+91 81100 25505','+91 94445 73784','+91 63833 47760']
+client =Client(account_sid,auth_token)
+for i in target_number:
+    message=client.messages.create(
+        body='Focus on Carrier Not girls! ',
+        from_=twilio_number,
+        to =i
+
+    )
+print('Message Se
