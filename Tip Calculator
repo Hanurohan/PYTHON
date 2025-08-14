@@ -1,0 +1,19 @@
+print('Welcome to Tip calculator')
+bill=int(input('What was the Bill Amount $? '))
+tip=int(input('How much tip would you like to give? 10%, 12% or 15% ?'))
+people=int(input('How many people share the bill? '))
+if tip==10:
+    tip_pay=bill*0.10
+    pay=bill/people
+    pay=pay+(tip_pay//people)
+    print('Each person should pay $',pay)
+elif tip==12:
+    tip_pay=bill*0.12
+    pay=bill/people
+    pay=pay+(tip_pay//people)
+    print('Each person should pay $',pay)
+elif tip==15:
+    tip_pay=bill*0.15
+    pay=bill/people
+    pay=pay+(tip_pay//people)
+    print('Each person should pay $',pay)
