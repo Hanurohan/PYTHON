@@ -1,0 +1,25 @@
+print('Welcome To Python Pizza Deliveries!')
+size=input("Enter the size of the pizza you want? S/M/L :").upper()
+bill=0
+pepperoni=input("Do You Want To Add Pepperoni? Y/N :").upper()
+cheese=input("Do You Want To Add Cheese? Y/N :").upper()
+if size=='S':
+    bill=bill+100
+    if pepperoni=='Y':
+        bill=bill+10
+    if cheese=='Y':
+        bill=bill+25
+elif size=='M':
+    bill=bill+500
+    if pepperoni=='Y':
+        bill=bill+20
+    if cheese=='Y':
+        bill=bill+50
+elif size=='L':
+    bill=bill+1000
+    if pepperoni=='Y':
+        bill=bill+50
+    if cheese=='Y':
+        bill=bill+100
+
+print('Your Bill is: $'+str(bill))
