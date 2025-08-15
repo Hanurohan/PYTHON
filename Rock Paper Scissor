@@ -1,0 +1,47 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+import random
+arr = [rock, paper, scissors]
+userChoose = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+
+if userChoose > 2 or userChoose < 0:
+    print('You typed an invalid number, you lose')
+else:
+    aiChoose = random.randint(0, 2)
+    print(arr[userChoose])
+
+    print(f"Computer choose {arr[aiChoose]}")
+
+    results = userChoose, aiChoose
+
+    if results[0] == results[1]:
+        print('There´s no winner')
+    elif results == (0, 2) or results == (1, 0) or results == (2, 1):
+        print('You win!')
+    else:
+        print('Sorry, you lose')
