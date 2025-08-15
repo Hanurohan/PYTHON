@@ -1,0 +1,24 @@
+print('Welcome To Treasure Island')
+print('Your Mission Is To Find The Treasure!')
+road=input('You are at a cross Road. Where Do You Want to Go? Type "Left" or "Right"? ')
+road=road.lower()
+if(road=='left'):
+    print('You Have Come to a Lake. There is an Island In the Middle of the Lake')
+    decison=input('Type "Wait" To wait for the boat, Type "Swim" To Swim Across.').lower()
+    if(decison=='wait'):
+        door=input('You Have Arrived To the Island Unharmed. There is a House with 3 Doors. '
+                   '\n one Red, one Yellow and one Blue. Which Color Do you choose?').lower()
+        if(door=='red'):
+            print('The Room is Full of Fire. You Entered and got Burned Alive :( \n GAME OVER!')
+        elif(door=='yellow'):
+            print('You have entered a room full of ghosts and you became one.  GAME OVER!')
+        elif(door=='blue'):
+            print('Gotcha! You got the Treasure. You WON!')
+
+    elif(decison=='swim'):
+        print('You Swimmed till the middle of the island but was eaten by a shark. You are Dead  GAME OVER!')
+elif(road=='right'):
+    print('You Have Entered into a maze and stuck there for Days and so You are Dead.  GAME OVER!')
+
+else:
+    print('Please enter a valid input.')
