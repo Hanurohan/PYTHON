@@ -1,0 +1,102 @@
+import random
+
+hangman_stages = [
+    """
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+         |
+         |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+     |   |
+         |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+    /|   |
+         |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+    /|\  |
+         |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+    /|\  |
+    /    |
+         |
+    =========""",
+    """
+     +---+
+     |   |
+     O   |
+    /|\  |
+    / \  |
+         |
+    ========="""
+]
+
+word_list = ["aardvark", "baboon", "camel"]
+chosen_word = random.choice(word_list)
+
+display = ["_"] * len(chosen_word)
+
+guessed_letters = []
+lives = 6  # Number of wrong attempts allowed
+
+print("Welcome to Hangman!")
+print(" ".join(display))
+
+game_over = False
+while not game_over:
+    guess = input("Guess a letter: ").lower()
+
+    if guess in guessed_letters:
+        print(f"You already guessed '{guess}'. Try another letter.")
+        continue
+
+    guessed_letters.append(guess)
+
+    if guess in chosen_word:
+        for i in range(len(chosen_word)):
+            if chosen_word[i] == guess:
+                display[i] = guess
+        print("Correct guess!")
+    else:
+        print(f"Wrong guess! '{guess}' is not in the word.")
+        lives -= 1
+
+    print(hangman_stages[6 - lives])
+    print("Word: " + " ".join(display))
+
+    if "_" not in display:
+        game_over = True
+        print("Congratulations! You guessed the word and won the game!")
+
+    # Check loss
+    elif lives == 0:
+        game_over = True
+        print("You lost! The correct word was:", chosen_word)
