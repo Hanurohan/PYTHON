@@ -1,0 +1,9 @@
+def paint(l,b,c):
+    area=l*b
+    coverage=area/c
+    print(f"You need {coverage.__ceil__()} cans to paint the wall")
+
+l=int(input("Enter the length of the Wall: "))
+b=int(input("Enter the Breadth of the Wall: "))
+c=int(input("Enter the Coverage of the paint: "))
+paint(l,b,c)
