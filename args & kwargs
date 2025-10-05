@@ -1,0 +1,21 @@
+'''def add(*args):
+    c=0
+    for arg in args:
+        c +=arg
+    print(c)
+
+add(1,2,3,4,5)
+add(1,2)'''
+
+'''def add(*args,name):
+    print(name)
+    print(args)
+
+add(20 , name='Rohan')'''
+
+def info_person(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+info_person(name='Rohan',age=22,department='Computer Science')
+info_person(age=40,department='EEE')
