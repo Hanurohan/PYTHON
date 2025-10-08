@@ -1,0 +1,14 @@
+student_marks={'Jenny':92,'Ram':83,'Rohan':49}
+student_grades={}
+for student in student_marks:
+    marks=student_marks[student]
+    if marks >90:
+        student_grades[student]='A+'
+    elif marks >80:
+        student_grades[student]='A'
+    elif marks >70:
+        student_grades[student]='B'
+    else:
+        student_grades[student]='C'
+
+print(student_grades)
