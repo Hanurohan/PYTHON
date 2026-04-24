@@ -1,0 +1,8 @@
+def paint():
+    height=int(input("Enter the height: "))
+    width=int(input("Enter the width: "))
+    coverage=7
+    number_of_cans=(height*width)/coverage
+    number_of_cans=number_of_cans.__ceil__()
+    print("The number of cans is:",number_of_cans)
+paint()
