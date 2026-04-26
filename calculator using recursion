@@ -1,0 +1,32 @@
+def calculator(first=None):
+    if first is None:
+        first = int(input('Enter the First Number: '))
+
+    operator = input('Enter the Operator (+, -, *, /): ')
+    second = int(input('Enter the Second Number: '))
+
+    if operator == '+':
+        result = first + second
+    elif operator == '-':
+        result = first - second
+    elif operator == '*':
+        result = first * second
+    elif operator == '/':
+        if second == 0:
+            print("Cannot divide by zero.")
+            return calculator(first)  # retry
+        result = first / second
+    else:
+        print('Invalid Operator')
+        return calculator(first)  # retry
+
+    print(f'The result is {first} {operator} {second} = {result}')
+
+    choice = input(f'Enter y to continue with {result}, or n to quit: ').lower()
+
+    if choice == 'y':
+        return calculator(result)  # recursive call
+    else:
+        print("Calculator exited.")
+
+calculator()
